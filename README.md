@@ -173,3 +173,22 @@ self.spinBox.setRange(0, 200)
 self.spinBox.valueChanged.connect(self.getVal)
 ```
 
+## Text Editor
+```python
+# Text Editor
+self.editor = QTextEdit(self)
+self.editor.move(150, 80)
+
+button = QPushButton("Send", self)
+
+button.move(320, 280)
+
+button.clicked.connect(self.getValue)
+
+# show
+self.show()
+
+def getValue(self):
+text = self.editor.toPlainText()
+print(text)
+```
