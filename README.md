@@ -127,3 +127,49 @@ def showImg(self):
     self.image.show()
 ```
 
+## ComboBox
+```python
+self.combo = QComboBox(self)
+self.combo.move(150, 100)
+
+button = QPushButton("save", self)
+button.move(150, 130)
+button.clicked.connect(self.display)
+
+lang_list = ["c", "c++", "java", "css"]
+
+for item in lang_list:
+    self.combo.addItem(item)
+
+self.show()
+
+def display(self):
+print(self.combo.currentText())
+```
+
+## Radio Buttons
+```python
+    self.male = QRadioButton("Male", self)
+    self.male.move(150, 110)
+
+    self.female = QRadioButton("Female", self)
+    self.female.move(210, 110) 
+
+```
+
+## MessageBox Widget
+```python
+QMessageBox.question(self, "Warning !!!!", "Are you sure exit?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+```
+
+## SpinBox Widget
+```python
+self.spinBox = QSpinBox(self)
+self.spinBox.move(150, 100)
+self.spinBox.setFont(font)
+#self.spinBox.setMinimum(25)
+#self.spinBox.setMaximum(25)
+self.spinBox.setRange(0, 200)
+self.spinBox.valueChanged.connect(self.getVal)
+```
+
