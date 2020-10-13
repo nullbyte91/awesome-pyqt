@@ -192,3 +192,87 @@ def getValue(self):
 text = self.editor.toPlainText()
 print(text)
 ```
+
+## Horizontal Box Layout
+```python
+# Horizontal Box Layout creation
+hbox = QHBoxLayout()
+button_1 = QPushButton("Button_1", self)
+button_2 = QPushButton("Button_2", self)
+
+hbox.addStretch()
+# Add Button to widget
+hbox.addWidget(button_1)
+hbox.addWidget(button_2)
+hbox.addStretch()
+
+# Set the Layout
+self.setLayout(hbox)
+```
+
+## Vertical Box Layout
+```python
+# Horizontal Box Layout creation
+vbox = QVBoxLayout()
+button_1 = QPushButton("Open", self)
+button_2 = QPushButton("Save", self)
+
+vbox.addStretch()
+# Add Button to widget
+vbox.addWidget(button_1)
+vbox.addWidget(button_2)
+#vbox.addStretch()
+
+# Set the Layout
+self.setLayout(vbox)
+```
+
+## Horizontal and Vertical Box Layout together
+```python
+# Main Layout
+mainLayout = QVBoxLayout()
+
+# Top Layout
+topLayout = QHBoxLayout()
+
+# Botton Layout
+bottomLayout = QHBoxLayout()
+
+cbox = QCheckBox("Check Box")
+
+topLayout.addWidget(cbox)
+
+button_1 = QPushButton("Button 1")
+button_2 = QPushButton("Button 2")
+
+bottomLayout.addWidget(button_1)
+bottomLayout.addWidget(button_2)
+
+# Add bottom and top to Main Layout
+mainLayout.addLayout(topLayout)
+mainLayout.addLayout(bottomLayout)
+
+self.setLayout(mainLayout)
+```
+
+## Form Layout
+```python
+# Form Layout
+formLayout = QFormLayout()
+
+name_text = QLabel("Name: ")
+name_input = QLineEdit()
+
+pass_text = QLabel("Password: ")
+pass_input = QLineEdit()
+
+hbox = QHBoxLayout()
+hbox.addWidget(QPushButton("Save"))
+hbox.addWidget(QPushButton("Login"))
+
+formLayout.addRow(name_text, name_input)
+formLayout.addRow(pass_text, pass_input)
+formLayout.addRow(hbox)
+
+self.setLayout(formLayout)
+```
